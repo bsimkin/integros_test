@@ -1,0 +1,15 @@
+version: "3.2"
+services:
+  test_run:
+    build: .
+    ports:
+      - 4444:4444
+      - 5900:5900
+    environment:
+      API_KEY: ''
+      PUBLISHER_ID: ''
+      ZONE_ID: ''
+    volumes:
+      - ./codeception.yml:/opt/codeception/codeception.yml
+      - ./tests:/opt/codeception/tests
+    network_mode: "host"
