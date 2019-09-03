@@ -1,5 +1,5 @@
 vendor/
 tests/_output/
-tests/_support/
+tests/_support/_generated
 .idea/
 docker-compose.override.yml
