@@ -31,6 +31,8 @@ class ApiCest {
         }
 
         $stats = array_count_values($banners);
+        ksort($stats);
+        $I->assertTrue(array_keys(self::EXPECTED_STATS) === array_keys($stats), 'compare expected and actual banners' . codecept_debug($stats));
 
         foreach ($stats as $key => $value) {
             codecept_debug('Total requests: ' .  $iterations . ' '  . $key . ' ' .  $this->percentage_of($iterations, $value) . ' %' . PHP_EOL);
